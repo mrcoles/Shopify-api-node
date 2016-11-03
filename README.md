@@ -99,7 +99,10 @@ Each method returns a `Promise` that resolves with the result:
 ```js
 shopify.order.list({ limit: 5 })
   .then(orders => console.log(orders))
-  .catch(err => console.error(err));
+  .catch(err => {
+    console.error(err);
+    console.error(err.response.body);
+  });
 ```
 
 ### Available resources and methods
